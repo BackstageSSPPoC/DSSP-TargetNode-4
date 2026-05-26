@@ -71,3 +71,8 @@ spec:
               memory: "128Mi"
               cpu: "100m"
               ephemeral-storage: "100Mi"
+      ignoreDifferences:
+        - group: apps
+          kind: Deployment
+          jsonPointers:
+            - /spec/template/spec/containers/0/resources
