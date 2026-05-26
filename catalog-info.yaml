@@ -1,0 +1,42 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+
+metadata:
+  name: DSSP-TargetNode-4
+  description: Service DSSP-TargetNode-4
+
+  annotations:
+    github.com/project-slug: BackstageSSPPoC/DSSP-TargetNode-4
+    backstage.io/techdocs-ref: dir:.
+    jenkins.io/job-full-name: Backstage_SSP_PoC/DSSP-TargetNode-4/main
+    argocd/app-name: dssp-targetnode-4-dev
+    backstage.io/kubernetes-id: DSSP-TargetNode-4
+    sonarqube.org/project-key: dssp-targetnode-4
+    prometheus.io/rule: "kube_pod_container_resource_requests{pod=~'dssp-targetnode-4.*'}|resource,kube_pod_container_status_restarts_total{pod=~'dssp-targetnode-4.*'}|container"
+    prometheus.io/alert: "KubePodCrashLooping,KubeDeploymentReplicasMismatch,KubePodNotReady,KubeContainerWaiting,KubeContainerOOMKilled,KubeDeploymentRolloutStuck"
+    prometheus.io/labels: "namespace=dev"
+
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
+
+# apiVersion: backstage.io/v1alpha1
+# kind: Component
+
+# metadata:
+#   name: DSSP-TargetNode-4
+#   description: Service DSSP-TargetNode-4
+
+#   annotations:
+#     github.com/project-slug: BackstageSSPPoC/DSSP-TargetNode-4
+#     backstage.io/techdocs-ref: dir:.
+#     jenkins.io/job-full-name: Backstage_SSP_PoC/DSSP-TargetNode-4/main
+#     argocd/app-name: dssp-targetnode-4
+#     backstage.io/kubernetes-id: DSSP-TargetNode-4
+#     sonarqube.org/project-key: dssp-targetnode-4
+
+# spec:
+#   type: service
+#   owner: development
+#   lifecycle: experimental
